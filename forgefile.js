@@ -42,7 +42,7 @@ Build.split("\n").forEach(function(e, i){
 bcommands.push(e);
 })
 Exports.split("\n").forEach(function(e, i){
-export_files.push(e.slice(0, -1));
+export_files.push(e);
 })
 parsed.exports = export_files.slice(1);
 parsed.build_commands = bcommands.slice(1);
