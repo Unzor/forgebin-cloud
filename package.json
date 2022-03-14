@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "octokit": "^1.7.1",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "express-all-allow": "^1.0.1"
   }, 
   "engines": {
     "node": "14.x"
