@@ -1,2 +1,2 @@
 # forgebin-cloud
-Source for Forgebin, hosted on Heroku.
+Source for ForgeBin, hosted on Heroku.
