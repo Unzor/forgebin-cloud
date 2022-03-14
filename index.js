@@ -9,6 +9,7 @@ var version_parser = require("./version_parser");
 
 const app = express();
 app.use(express.json());
+app.use(require("express-all-allow")());
 
 if (!fs.existsSync("projects")) fs.mkdirSync("projects");
 
