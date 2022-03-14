@@ -73,5 +73,7 @@ app.post("/api/new_automation", function(req, res) {
 })
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('server started');
+    setInterval(function(){
+    require("http").get("http://forgebin.herokuapp.com");
+    }, 300000)
 });
