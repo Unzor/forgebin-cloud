@@ -71,6 +71,6 @@ app.post("/api/new_automation", function(req, res) {
     setInterval(build, req.body.time);
 })
 
-app.listen(3100, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('server started');
 });
