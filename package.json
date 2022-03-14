@@ -1,0 +1,15 @@
+{
+  "name": "forgebin-cloud",
+  "version": "1.0.0",
+  "description": "Source for ForgeBin, hosted on Heroku.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["automation", "github", "building"],
+  "author": "diegab",
+  "license": "ISC",
+  "dependencies": {
+    "octokit": "^1.7.1"
+  }
+}
