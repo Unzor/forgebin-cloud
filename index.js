@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.post("/api/new_automation", function(req, res) {
+	console.log("Starting automation...");
     var octoveal = new Octoveal({
         auth: req.body.auth,
         repo: req.body.repo.split("/").pop(),
