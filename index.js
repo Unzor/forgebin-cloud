@@ -3,6 +3,7 @@ var child_process = require("child_process");
 var {
     Octoveal
 } = require("./octoveal");
+var builds = {};
 const express = require('express');
 var forgefile = require("./forgefile");
 var version_parser = require("./version_parser");
@@ -37,7 +38,8 @@ app.post("/api/new_automation", function(req, res) {
         });
     });
 
-            global.build = async function() {
+	var rnum = Math.random().toString().split(".").pop();
+            builds[rnum] = async function() {
 				 var parsed = forgefile.parse("projects/" + req.body.repo.split("/").pop() + "/Forgefile");
     parsed.build_commands.forEach(async function(c, i) {
         console.log("CURRENT COMMAND: cd projects/" + req.body.repo.split("/").pop() + " && " + c)
@@ -67,9 +69,9 @@ app.post("/api/new_automation", function(req, res) {
             };
             // end build script
 			if (req.body.build_now) {
-            build();
+            builds[rnum]();
 			}
-    setInterval(build, req.body.time);
+    setInterval(builds[rnum], req.body.time);
 })
 
 app.listen(process.env.PORT || 3000, () => {
